@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <style>
+
+#section-1{
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 1366px;
+  height: 768px;
+}
+#section-1 > #video-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#section-1 > span{
+  color: rgb(97, 212, 87);
+  z-index: 2;
+  text-shadow: 2px 2px black;
+  font-size: 72px;
+    }
+        
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+
+    .leaflet-container {
+			height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+    </style>
+
+    <style>#map { width: 816px; height: 516px; }
+        .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+        .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+    </style>
+
+    <style>#map_d { width: 816px; height: 516px; }
+        .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+        .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-green w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="#intro" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Intro</a>
+    <a href="#tree" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Trees</a>
+    <a href="#tree_density" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tree Density</a>
+    <a href="#epilogue" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Final Thoughts</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#intro" class="w3-bar-item w3-button w3-padding-large">Intro</a>
+    <a href="#tree" class="w3-bar-item w3-button w3-padding-large">Trees</a>
+    <a href="#tree_density" class="w3-bar-item w3-button w3-padding-large">Tree Density</a>
+    <a href="#epilogue" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+ <section id="section-1">
+            <video autoplay="" muted="" loop="" id="video-background"> 
+                <source src="theworldifmbsmeme.mp4" type="video/mp4">
+            </video>
+            <span>Singapore society if more TREES</span>
+        </section>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container" id="intro" >
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Introduction</h1>
+      <h5 class="w3-padding-32">As a City in a Garden, trees play a significant role in the urban environment of Singapore. Not only do they keep the island cooler during the hot, year long summer, they also provide much needed reprieve and eco-therapy to the increasingly stressed out Singaporeans as they navigate a similarly increasingly, unpredictable world.<br>
+    </h5>
+
+      <p class="w3-text-grey"> Singapore contains many tree species, 1,689 different species to be specific. As of April 2023, the number of trees planted to date is 540,469 across the island and her offshore islands. A target of 1 million trees planted had been set to transform Singapore into a City in Nature by 2030, which would be very nice indeed. <br>
+        <br>As such, I thought it would be quite interesting to see how many trees were planted in each of Singapore's subzone. Maybe in subzones which have less trees, more trees should be planted to match those which have plentifully more. Regardless, it would be fun to see which subzone had the most trees at least. </p>
+    </div>
+    <div class="w3-third w3-center">
+        <img src="https://www.tembusulaw.com/wp-content/uploads/tembusu-tree_tembusulaw.jpg" style="width:600px;height:700px;">
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container"  id='tree'>
+    <div class="w3-content">
+      <div class="w3-center">
+
+      </div>
+      <div id='map'></div>
+
+      <script type="text/javascript" src="trees_density.js"></script>
+      
+      <script type="text/javascript">
+      
+          const map = L.map('map').setView([1.3521, 103.8198], 11);
+      
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      
+          // control that shows state info on hover
+          const info = L.control();
+      
+          info.onAdd = function (map) {
+              this._div = L.DomUtil.create('div', 'info');
+              this.update();
+              return this._div;
+          };
+      
+          info.update = function (props) {
+              const contents = props ? `<b>${props.Name}</b><br />${props.Trees} trees` : 'Hover over a Subzone';
+              this._div.innerHTML = `<h4>Singapore Population</h4>${contents}`;
+          };
+      
+          info.addTo(map);
+      
+      
+          // get color depending on population density value
+          function getColor(d) {
+              return d > 10000 ? '#0c2c84' :
+                  d > 8000  ? '#225ea8' :
+                  d > 6000  ? '#1d91c0' :
+                  d > 4000  ? '#41b6c4' :
+                  d > 2000   ? '#7fcdbb' :
+                  d > 1000    ? '#c7e9b4' :
+                  d > 10     ? '#ffffcc' : '#000000';
+          }
+      
+          function style(feature) {
+              return {
+                  weight: 2,
+                  opacity: 1,
+                  color: 'white',
+                  fillOpacity: 0.8,
+                  fillColor: getColor(feature.properties.Trees)
+              };
+          }
+      
+          function highlightFeature(e) {
+              const layer = e.target;
+      
+              layer.setStyle({
+                  weight: 5,
+                  color: '#666',
+                  dashArray: '',
+                  fillOpacity: 0.7
+              });
+      
+              layer.bringToFront();
+      
+              info.update(layer.feature.properties);
+          }
+      
+          /* global sgmapData */
+          const geojson = L.geoJson(sgmapData, {
+              style,
+              onEachFeature
+          }).addTo(map);
+      
+          function resetHighlight(e) {
+              geojson.resetStyle(e.target);
+              info.update();
+          }
+      
+          function zoomToFeature(e) {
+              map.fitBounds(e.target.getBounds());
+          }
+      
+          function onEachFeature(feature, layer) {
+              layer.on({
+                  mouseover: highlightFeature,
+                  mouseout: resetHighlight,
+                  click: zoomToFeature
+              });
+          }
+      
+          map.attributionControl.addAttribution('Population data &copy; <a href="https://www.nparks.gov.sg/treessg">TreesSG</a>');
+      
+      
+          const legend = L.control({position: 'bottomright'});
+      
+          legend.onAdd = function (map) {
+      
+              const div = L.DomUtil.create('div', 'info legend');
+              const grades = [0, 10, 1000, 2000, 4000, 6000, 8000, 10000];
+              const labels = [];
+              let from, to;
+      
+              for (let i = 0; i < grades.length; i++) {
+                  from = grades[i];
+                  to = grades[i + 1];
+      
+                  labels.push(`<i style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
+              }
+      
+              div.innerHTML = labels.join('<br>');
+              return div;
+          };
+      
+          legend.addTo(map);
+      
+      </script>
+      <div class="w3-twothird">
+        <h1>Trees per subzone</h1>
+        <h5 class="w3-padding-32">The number of trees in each subzone is represented by colours. Subzones with lesser trees having a lighter, yellow shade, which gradually turn to a darker shade of blue as more trees are present.</h5>
+  
+        <p class="w3-text-grey">From the choropleth, subzones with the most trees include Changi Airport, Tampines East and Lakeside, with most subzones in the East and Central Singapore seemingly to have more trees <br>
+        <br>Subzones demarketed as black represent unknown data regarding their number of trees. Offically, the dataset used to created this choropleth lists Sentosa as only having 1 tree, but anyone who has ever been there will know that there is definitely more than 1!</p>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Third Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container"  id='tree_density'>
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <img src="https://raw.githubusercontent.com/darendi/TreeDensity/main/tree_density_ss.png" style="width:816px; height:516px">
+        <a href="https://darendi.github.io/tree_density_choropleth/">Tree Density per Subzone</a>
+      </div>
+  
+      <div class="w3-twothird">
+        <h1>Tree density per subzone</h1>
+        <h5 class="w3-padding-32">Eventually it occured to me that merely measuring the number of trees per subzone was not going to be very representative of how 'green' a subzone is as a whole. Some subzones are way bigger than others, so it wouldn't be too far fetched that they would have more trees proportional to their size.</h5>
+  
+        <p class="w3-text-grey">As such, I decided to look at tree density per subzone instead, which is calculated by taking the number of trees divided by the area of the subzone in square kilometers. This would give a measurement of number of trees per square kilometer within the subzone, which would be a more realistic representation of how 'green' a subzone is.<br>
+        <br> In other words, the higher the tree per square kilometer for the subzone, the higher the concentration of trees within it, regardless of the size of the subzone. <br>
+        <br>From the choropleth screenshot (much apologies, couldn't figure out how to have 2 Leaflet maps concurrently on the site eventually ...), Changi Airport and East Singapore in general still have relatively high tree density. However, now the Port area in the future Greather Southern Waterfront and Kent Ridge have the highest tree density readings. Pretty suprising for the Port Area, given that most people would assume that there are hardly any trees in a busy port. Unsuprisingly, Upper Thomson has also one of the highest tree density, especially given its proximity to the nature reserves.</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Fourth Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-containerr"  id='epilogue'>
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <img src="https://media.tenor.com/I_-KjeRZFggAAAAC/flowers-tree.gif">
+        <img src ="https://media.tenor.com/xURfEKcg6dAAAAAC/wispy-woods-kirby.gif">
+      </div>
+  
+      <div class="w3-third w3-center">
+        <h1>Final Thoughts</h1>
+        <h5 class="w3-padding-32">Overall, it was a fun little explorative analysis into the tree population in Singapore and where they were located.</h5>
+  
+        <p class="w3-text-grey">I think that most Singapore has quite an abundance of trees, especially relative to other developed cities in the world. Some of the data may be inaccurate, especially for the offshore islands, but they will definitely get updated one day.<br>
+        <br> Also learned that larger areas may not necessarily mean that it would be as densely populated with trees compared to a smaller area. If we were to set the Central Catchment Area as a benchmark for how densely populated with trees an area should be, then Singapore as a whole is doing quite well I suppose. Even Jurong Industrial area seems to have a good tree density, which should say a lot.</p>
+      </div>
+    </div>
+  </div>
+  
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
